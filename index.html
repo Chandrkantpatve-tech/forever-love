@@ -3,10 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Forever Love ❤️</title>
+<title>My Forever Valentine ❤️</title>
 
 <style>
-
 *{
     margin:0;
     padding:0;
@@ -15,9 +14,23 @@
 }
 
 body{
-    background: linear-gradient(135deg,#ff9a9e,#fad0c4,#fad0c4);
+    background: linear-gradient(135deg,#ff9a9e,#fad0c4);
     overflow-x:hidden;
     scroll-behavior:smooth;
+    transition:1s;
+}
+
+/* 🌙 Dark Mode */
+body.dark{
+    background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+}
+
+body.dark nav{
+    background:rgba(0,0,0,0.5);
+}
+
+body.dark footer{
+    background:#111;
 }
 
 /* NAVBAR */
@@ -47,14 +60,9 @@ nav ul li a{
     text-decoration:none;
     color:white;
     font-weight:bold;
-    transition:0.3s;
 }
 
-nav ul li a:hover{
-    color:#ff2e63;
-}
-
-/* SECTION STYLE */
+/* SECTION */
 section{
     min-height:100vh;
     display:flex;
@@ -65,28 +73,19 @@ section{
     color:white;
 }
 
-/* GLASS CARD */
 .card{
     background:rgba(255,255,255,0.2);
     backdrop-filter:blur(15px);
     padding:40px;
     border-radius:20px;
     width:90%;
-    max-width:600px;
+    max-width:750px;
     box-shadow:0 10px 40px rgba(0,0,0,0.3);
-    animation:fadeIn 2s ease;
 }
 
-h1{
-    margin-bottom:20px;
-}
+h1{ margin-bottom:20px; }
+p{ line-height:1.8; margin-bottom:20px; }
 
-p{
-    line-height:1.7;
-    margin-bottom:20px;
-}
-
-/* BUTTONS */
 button{
     padding:12px 25px;
     border:none;
@@ -111,23 +110,6 @@ button:hover{
     transform:scale(1.1);
 }
 
-/* HEART ANIMATION */
-.heart{
-    font-size:60px;
-    animation:beat 1s infinite;
-}
-
-@keyframes beat{
-    0%{transform:scale(1);}
-    50%{transform:scale(1.2);}
-    100%{transform:scale(1);}
-}
-
-@keyframes fadeIn{
-    from{opacity:0; transform:translateY(40px);}
-    to{opacity:1; transform:translateY(0);}
-}
-
 footer{
     text-align:center;
     padding:20px;
@@ -135,83 +117,132 @@ footer{
     color:white;
 }
 
+/* 💍 Glowing Ring */
+.ring{
+    font-size:60px;
+    animation: ringGlow 1.5s infinite alternate;
+}
+
+@keyframes ringGlow{
+    from{ text-shadow:0 0 10px gold; }
+    to{ text-shadow:0 0 40px yellow; }
+}
 </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
 <nav>
     <h2>❤️ My Love</h2>
     <ul>
         <li><a href="#home">Home</a></li>
         <li><a href="#story">Our Story</a></li>
-        <li><a href="#reasons">Why You</a></li>
         <li><a href="#proposal">Proposal</a></li>
     </ul>
 </nav>
 
-<!-- HOME -->
 <section id="home">
     <div class="card">
-        <div class="heart">❤️</div>
-        <h1>To The Most Beautiful Girl</h1>
+        <h1>To The Girl Who Feels Like Home 💕</h1>
         <p>
-            You are not just a part of my life,<br>
-            you are the best chapter of it.<br><br>
-            Every heartbeat of mine whispers your name.
+            Every chapter of my life became beautiful
+            the day you became part of it.
         </p>
     </div>
 </section>
 
-<!-- STORY -->
 <section id="story">
     <div class="card">
         <h1>Our Story 🌹</h1>
         <p>
-            The day we met, something changed.<br>
-            My world became brighter.<br>
-            My smile became real.<br>
-            My heart found its home in you.
+        You and me… we grew up together.<br><br>
+        From playing in the street every evening,
+        fighting for silly reasons,
+        sharing snacks and laughing without worries —
+        those were our first memories.<br><br>
+        Before 20 April, you were my best friend.<br>
+        After 20 April, you were still my best friend —
+        just with a different heartbeat.<br><br>
+        From neighbours… to childhood partners…
+        to a love that feels like home. 💕
         </p>
     </div>
 </section>
 
-<!-- REASONS -->
-<section id="reasons">
-    <div class="card">
-        <h1>Why I Love You 💕</h1>
-        <p>
-            • Your smile melts my heart.<br>
-            • Your voice is my favorite sound.<br>
-            • Your care makes me feel special.<br>
-            • With you, I feel complete.
-        </p>
-    </div>
-</section>
-
-<!-- PROPOSAL -->
 <section id="proposal">
     <div class="card">
-        <h1>Will You Be Mine Forever? 💍</h1>
+        <h1>Will You Be My Valentine Forever? 💍</h1>
         <p>
-            I don't promise a perfect life,<br>
-            but I promise to stand beside you<br>
-            in every situation.
+            Not just for today.<br>
+            Not just for this year.<br>
+            But for every tomorrow.
         </p>
 
-        <button class="yes" onclick="accepted()">YES ❤️</button>
+        <button class="yes" onclick="celebrate()">YES ❤️</button>
         <button class="no" onmouseover="moveButton(this)">NO 😢</button>
     </div>
 </section>
 
 <footer>
-    Made with infinite love by your favorite developer 💻❤️
+Made with infinite love 💻❤️
 </footer>
 
+<!-- 🎵 SONG -->
+<audio id="loveSong">
+    <source src="love.mp3" type="audio/mpeg">
+</audio>
+
 <script>
-function accepted(){
-    alert("Yayyyy ❤️ You just made me the happiest person alive!");
+
+function celebrate(){
+
+    document.getElementById("loveSong").play();
+
+    const celebration = document.createElement("div");
+    celebration.style.position="fixed";
+    celebration.style.top="0";
+    celebration.style.left="0";
+    celebration.style.width="100%";
+    celebration.style.height="100%";
+    celebration.style.background="radial-gradient(circle at center, #ff4d6d, #ff9a9e)";
+    celebration.style.display="flex";
+    celebration.style.flexDirection="column";
+    celebration.style.justifyContent="center";
+    celebration.style.alignItems="center";
+    celebration.style.color="white";
+    celebration.style.zIndex="9999";
+    celebration.style.textAlign="center";
+    celebration.style.overflow="hidden";
+
+    celebration.innerHTML = `
+        <h1 style="font-size:42px;">💖 SHE SAID YES 💖</h1>
+        <div class="ring">💍</div>
+        <h2 style="margin:20px 0;">You Are My Forever Valentine</h2>
+        <p style="max-width:600px;">
+            From this moment, it's you and me against the world.
+        </p>
+    `;
+
+    document.body.appendChild(celebration);
+
+    // BIG FIREWORK BURST
+    for(let i=0;i<500;i++){
+        let dot=document.createElement("div");
+        dot.style.position="absolute";
+        dot.style.width="10px";
+        dot.style.height="10px";
+        dot.style.borderRadius="50%";
+        dot.style.background=`hsl(${Math.random()*360},100%,60%)`;
+        dot.style.left="50%";
+        dot.style.top="50%";
+        dot.style.transition="1.5s ease-out";
+        celebration.appendChild(dot);
+
+        setTimeout(()=>{
+            dot.style.transform=`translate(${Math.random()*1000-500}px, ${Math.random()*1000-500}px)`;
+            dot.style.opacity="0";
+        },10);
+    }
 }
 
 function moveButton(btn){
@@ -219,8 +250,22 @@ function moveButton(btn){
     btn.style.top=Math.random()*400+"px";
     btn.style.left=Math.random()*400+"px";
 }
+
+/* 🌙 Auto Dark Mode After 7PM */
+const hour = new Date().getHours();
+if(hour >= 19 || hour < 6){
+    document.body.classList.add("dark");
+}
+
+/* 🌙 Double Click Toggle */
+document.addEventListener("dblclick",()=>{
+    document.body.classList.toggle("dark");
+});
+
 </script>
 
 </body>
 </html>
+
+
 
