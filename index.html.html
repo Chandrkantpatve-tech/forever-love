@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Forever Love ❤️</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background: linear-gradient(135deg,#ff9a9e,#fad0c4,#fad0c4);
+    overflow-x:hidden;
+    scroll-behavior:smooth;
+}
+
+/* NAVBAR */
+nav{
+    position:fixed;
+    width:100%;
+    top:0;
+    background:rgba(255,255,255,0.2);
+    backdrop-filter:blur(10px);
+    display:flex;
+    justify-content:space-between;
+    padding:15px 40px;
+    z-index:1000;
+}
+
+nav h2{
+    color:#fff;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:20px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:white;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    color:#ff2e63;
+}
+
+/* SECTION STYLE */
+section{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:100px 20px;
+    text-align:center;
+    color:white;
+}
+
+/* GLASS CARD */
+.card{
+    background:rgba(255,255,255,0.2);
+    backdrop-filter:blur(15px);
+    padding:40px;
+    border-radius:20px;
+    width:90%;
+    max-width:600px;
+    box-shadow:0 10px 40px rgba(0,0,0,0.3);
+    animation:fadeIn 2s ease;
+}
+
+h1{
+    margin-bottom:20px;
+}
+
+p{
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+/* BUTTONS */
+button{
+    padding:12px 25px;
+    border:none;
+    border-radius:30px;
+    font-size:16px;
+    cursor:pointer;
+    margin:10px;
+    transition:0.3s;
+}
+
+.yes{
+    background:#ff2e63;
+    color:white;
+}
+
+.no{
+    background:white;
+    color:#ff2e63;
+}
+
+button:hover{
+    transform:scale(1.1);
+}
+
+/* HEART ANIMATION */
+.heart{
+    font-size:60px;
+    animation:beat 1s infinite;
+}
+
+@keyframes beat{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.2);}
+    100%{transform:scale(1);}
+}
+
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(40px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    background:#ff2e63;
+    color:white;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <h2>❤️ My Love</h2>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#story">Our Story</a></li>
+        <li><a href="#reasons">Why You</a></li>
+        <li><a href="#proposal">Proposal</a></li>
+    </ul>
+</nav>
+
+<!-- HOME -->
+<section id="home">
+    <div class="card">
+        <div class="heart">❤️</div>
+        <h1>To The Most Beautiful Girl</h1>
+        <p>
+            You are not just a part of my life,<br>
+            you are the best chapter of it.<br><br>
+            Every heartbeat of mine whispers your name.
+        </p>
+    </div>
+</section>
+
+<!-- STORY -->
+<section id="story">
+    <div class="card">
+        <h1>Our Story 🌹</h1>
+        <p>
+            The day we met, something changed.<br>
+            My world became brighter.<br>
+            My smile became real.<br>
+            My heart found its home in you.
+        </p>
+    </div>
+</section>
+
+<!-- REASONS -->
+<section id="reasons">
+    <div class="card">
+        <h1>Why I Love You 💕</h1>
+        <p>
+            • Your smile melts my heart.<br>
+            • Your voice is my favorite sound.<br>
+            • Your care makes me feel special.<br>
+            • With you, I feel complete.
+        </p>
+    </div>
+</section>
+
+<!-- PROPOSAL -->
+<section id="proposal">
+    <div class="card">
+        <h1>Will You Be Mine Forever? 💍</h1>
+        <p>
+            I don't promise a perfect life,<br>
+            but I promise to stand beside you<br>
+            in every situation.
+        </p>
+
+        <button class="yes" onclick="accepted()">YES ❤️</button>
+        <button class="no" onmouseover="moveButton(this)">NO 😢</button>
+    </div>
+</section>
+
+<footer>
+    Made with infinite love by your favorite developer 💻❤️
+</footer>
+
+<script>
+function accepted(){
+    alert("Yayyyy ❤️ You just made me the happiest person alive!");
+}
+
+function moveButton(btn){
+    btn.style.position="absolute";
+    btn.style.top=Math.random()*400+"px";
+    btn.style.left=Math.random()*400+"px";
+}
+</script>
+
+</body>
+</html>
+
